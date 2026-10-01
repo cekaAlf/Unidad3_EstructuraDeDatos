@@ -29,6 +29,7 @@ class Listas:
             Q.liga = P
             P=Q
             res = int(input("¿Desea ingresar más números? (si:1/no:0)"))
+        self.P = P
         return P # Retornan la cabeza de la lista
 
     def Crea_Final(self):
@@ -48,7 +49,8 @@ class Listas:
             T.liga = Q
             T = Q # T apunta al ultimo nodo
             res = int(input("¿Desea ingresar más números? (si:1/no:0)"))
-        return T
+        self.P = P
+        return self.P
 
     def Recorre_Iterativo(self):
         Q = self.P
