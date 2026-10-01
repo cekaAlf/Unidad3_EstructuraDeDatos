@@ -149,3 +149,97 @@ class Listas:
             Q.liga = T
         else:
             print ("El nodo dado como referencia no se encuentra en la lista")
+
+    def Elimina_Inicio(self):
+        # Este algoritmo permite eliminar el primer elemento de una lista simplemente ligada.
+        # P es el apuntador al primer elemento de la lista. Q es una variable de tipo apuntador,
+        # INFO y LIGA son los campos de los nodos de la lista.
+        Q = self.P
+        # Si la lista tuviera s[olo un elemento entonces a P se le asignaria NULO , que es el valor
+        # de Q.liga En caso contrario, queda con la direccion del siguiente elemento.
+        P = Q.liga
+
+    def Elimina_Ultimo(self):
+        # Este algoritmo elimina el ultimo nodo de la lista simplemente ligada
+        Q = self.P
+        if P.liga == None: # Se verifica si la lista tiene solo un nodo
+            P = None
+        else:
+            while Q.liga is not None:
+                T = Q
+                Q = Q.liga
+        T = None
+
+    def Elimina_X(self):
+        # Este algoritmo permite eliminar un nodo con informacion X d euna lista simplemente ligada.
+        Q = self.P
+        Band = 1
+        while Q.info != X and Band == 1:
+            if Q.liga is not None:
+                T = Q
+                Q = Q.liga
+            else:
+                Band = 0
+        if Band == 0:
+            print (f"El elemento con informacion: {X}(X), no se encuentra en la lista.")
+        else:
+            if P == Q:
+                P = Q.liga
+            else:
+                T.liga = Q.liga
+
+    def Elimina_antes_X(self):
+        # Eliminar un nodo anterior al nodo con informacion X en una lista simplemente ligada
+        if P.info == X:
+            print(f"No existe un nodo que preceda al que contiene a {X} (X)")
+        else:
+            Q = self.P
+            T = self.P
+            Band = 1
+            while Q.info != X and Band ==1:
+                if Q.liga is not None:
+                    R = T
+                    T = Q
+                    Q = Q.liga
+                else:
+                    Band = 0
+            if Band == 0:
+                print ("El elemento no se encuentra en la lista.")
+            else:
+                if self.P.liga == Q: # El elemento a eliminar es el primero
+                    self.P = Q
+                else:
+                    R.liga = Q
+    def Eliminar_despues_X(self):
+        print("")
+    # BUSQUEDA EN LISTAS SIMPLEMENTE LIGADAS
+    def Busqueda_Desordenada(self, X):
+        # Buscar elemento con la informacion X en una lista simplemente ligada que se encuentra desordenada.
+        Q = self.P
+        while Q is not None and Q.info != X:
+            Q = Q.liga
+        if Q is None:
+            print ("El elemento no se encuentra en la lista.")
+        else:
+            print ("El elemento sí se encuentra en la lista.")
+
+    def Busqueda_Ordenada(self, X):
+        # Buscar elemento con la informacion X en una lista simplemente ligada que se encuentra ORDENADA DE FORMA ASCENDENTE.
+        Q = self.P
+        while Q is not None and Q.info < X:
+            Q = Q.liga
+        if Q is None:
+            print ("El elemento no se encuentra en la lista.")
+        else:
+            print ("El elemento sí se encuentra en la lista.")
+
+    # LOS ALGORITMOS DE BUSQUEDA, INSERCION Y ELIMINACION se pueden implementar de  FORMA RECURSIVA.
+    def Busqueda_Recursiva(self, X):
+        # De manera recursiva en una lista simplemente ligada q se encuentra DESORDENADA.
+        if self.P is not None:
+            if self.P.info == X:
+                print ("El elemento se encuentra en la lista.")
+            else:
+                Busqueda_Recursivo (X)
+        else:
+            print("El elemento no se encuentra en la lista.")
