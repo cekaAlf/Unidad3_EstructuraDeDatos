@@ -50,6 +50,12 @@ class Listas:
             res = int(input("¿Desea ingresar más números? (si:1/no:0)"))
         return T
 
+    def Recorre_Iterativo(P):
+        Q = P
+        while Q != None:
+            print (Q.info)
+            Q = Q.liga # Apunta al siguiente nodo de la lista
+
     def Inserta_Inicio(self, dato):
         # Este algoritmo inserta al inicio de una lista simplemente ligada. 
         # P es el apuntador al primer nodo de la misma, y DATO es la informacion
@@ -60,5 +66,3 @@ class Listas:
         Q.info = dato
         Q.liga = self.P
         self.P = Q
-
-    def 
