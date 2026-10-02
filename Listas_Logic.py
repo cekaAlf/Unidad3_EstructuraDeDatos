@@ -190,7 +190,7 @@ class Listas:
 
     def Elimina_antes_X(self):
         # Eliminar un nodo anterior al nodo con informacion X en una lista simplemente ligada
-        if P.info == X:
+        if self.P.info == X:
             print(f"No existe un nodo que preceda al que contiene a {X} (X)")
         else:
             Q = self.P
@@ -234,12 +234,12 @@ class Listas:
             print ("El elemento sí se encuentra en la lista.")
 
     # LOS ALGORITMOS DE BUSQUEDA, INSERCION Y ELIMINACION se pueden implementar de  FORMA RECURSIVA.
-    def Busqueda_Recursiva(self, X):
+    def Busqueda_Recursivo(self, X):
         # De manera recursiva en una lista simplemente ligada q se encuentra DESORDENADA.
         if self.P is not None:
             if self.P.info == X:
                 print ("El elemento se encuentra en la lista.")
             else:
-                Busqueda_Recursivo (X)
+                self.Busqueda_Recursivo(X)
         else:
             print("El elemento no se encuentra en la lista.")
